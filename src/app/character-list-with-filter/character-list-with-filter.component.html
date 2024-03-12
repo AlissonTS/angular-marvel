@@ -1,0 +1,11 @@
+<section class="filter">
+  <app-character-filter (characterName)="onFilterChanged($event)"></app-character-filter>
+</section>
+
+<main>
+  <ng-container *ngIf="characters$ | async as characters">
+    <app-character-list [characters]="characters.results"></app-character-list>
+
+    <app-character-pagination [totalRecords]="characters.total" (newPage)="onPageChanged($event)"></app-character-pagination>
+  </ng-container>
+</main>

@@ -1,0 +1,6 @@
+<p>{{ totalRecords }} Results</p>
+<p>Page {{ currentPage + 1 }}</p>
+<button (click)="goToFirstPage()" *ngIf="currentPage !== 0 && numberPages > 0">First Page</button>
+<button (click)="previousPage()" *ngIf="currentPage >= 1">Previous</button>
+<button (click)="nextPage()" *ngIf="currentPage < numberPages">Next</button>
+<button (click)="goToLastPage()" *ngIf="currentPage < numberPages">Last Page</button>

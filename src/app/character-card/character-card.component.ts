@@ -1,12 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ICharacter } from '../model/character.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-card',
   templateUrl: './character-card.component.html',
   styleUrls: ['./character-card.component.scss'],
 })
-export class CharacterCardComponent implements OnInit {
-  constructor() {}
+export class CharacterCardComponent {
+  @Input() character!: ICharacter;
 
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+
+  navigate(): void {
+    console.log('teste');
+    this.router.navigate(['character-info', this.character.id]);
+  }
 }

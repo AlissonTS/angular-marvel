@@ -1,1 +1,4 @@
-<p>character-card works!</p>
+<p>Name: {{ character.name }}</p>
+<p>Description: {{ character.description }}</p>
+<img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" [alt]="character.name">
+<a [routerLink]="['/character-info', character.id]">See more</a>
