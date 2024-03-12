@@ -1,4 +1,7 @@
-<p>Name: {{ character.name }}</p>
-<p>Description: {{ character.description }}</p>
-<img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" [alt]="character.name">
-<a [routerLink]="['/character-info', character.id]">See more</a>
+<div>
+  <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" [alt]="character.name">
+  <div class="info">
+    <h2 class="character-name">Name: {{ character.name }}</h2>
+    <a [routerLink]="['/character-info', character.id]">See more</a>
+  </div>
+<div>

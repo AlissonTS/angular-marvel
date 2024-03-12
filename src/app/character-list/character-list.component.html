@@ -2,6 +2,10 @@
   <div class="grid-item" *ngFor="let character of characters">
     <app-character-card [character]="character"></app-character-card>
   </div>
+
+  <ng-container *ngIf="characters?.length === 0">
+    <p class="not-found">No characters found.</p>
+  </ng-container>
 </div>
 
 

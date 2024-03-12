@@ -1,11 +1,16 @@
-<ng-container *ngIf="characterInfo; else characterNotFound">
-  <h1>Character: {{ characterInfo.name }}</h1>
-  <p>Description: {{ characterInfo.name }}</p>
-  <img [src]="characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension" [alt]="characterInfo.name">
-</ng-container>
+<main class="character-info">
+  <ng-container *ngIf="characterInfo; else characterNotFound">
+    <h1>Character: {{ characterInfo.name }}</h1>
+    <p><span>Description</span>: {{ characterInfo.name }}</p>
+    <img [src]="characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension" [alt]="characterInfo.name">
+  </ng-container>
 
-<div>
-  <ng-template #characterNotFound>Character not found.</ng-template>
-</div>
+  <ng-template #characterNotFound>
+    <p class="not-found">Character not found.</p>
+  </ng-template>
+</main>
 
-<button (click)="returnToList()">Return to list</button>
+<section class="buttons">
+  <button (click)="returnToList()">Return to list</button>
+</section>
+

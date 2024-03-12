@@ -12,6 +12,7 @@ import { CharacterListWithFilterComponent } from './character-list-with-filter/c
 import { CharacterFilterComponent } from './character-filter/character-filter.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
 import { CharacterPaginationComponent } from './character-pagination/character-pagination.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CharacterPaginationComponent } from './character-pagination/character-p
     CharacterFilterComponent,
     CharacterInfoComponent,
     CharacterPaginationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
