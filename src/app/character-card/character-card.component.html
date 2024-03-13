@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="character">
   <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" [alt]="character.name">
   <div class="info">
     <h2 class="character-name">{{ character.name }}</h2>

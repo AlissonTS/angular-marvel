@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ICharacter } from '../model/character.model';
 import { Router } from '@angular/router';
+
+import { ICharacter } from '../model/character.model';
 
 @Component({
   selector: 'app-character-card',
@@ -13,7 +14,6 @@ export class CharacterCardComponent {
   constructor(private router: Router) {}
 
   navigate(): void {
-    console.log('teste');
     this.router.navigate(['character-info', this.character.id]);
   }
 }
