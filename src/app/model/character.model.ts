@@ -6,4 +6,18 @@ export interface ICharacter {
     path: string;
     extension: string;
   };
+  comics: {
+    available: number;
+    returned: number;
+    items: {
+      name: string;
+    }[];
+  };
+  series: {
+    available: number;
+    returned: number;
+    items: {
+      name: string;
+    }[];
+  };
 }
