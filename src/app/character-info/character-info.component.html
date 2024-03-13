@@ -1,0 +1,56 @@
+<main class="character-info">
+  <ng-container *ngIf="characterInfo; else characterNotFound">
+    <h1>Character: {{ characterInfo.name }}</h1>
+    <p><span>Description</span>: {{ characterInfo.name }}</p>
+    <img [src]="characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension" [alt]="characterInfo.name">
+
+    <section class="comics">
+      <ng-container *ngIf="characterInfo.comics.available > 0; else noComics">
+        <p>
+          <span *ngIf="characterInfo.comics.available === characterInfo.comics.returned">
+            The character {{ characterInfo.name }} has taken part in {{ characterInfo.comics.available }} comics:
+          </span>
+          <span *ngIf="characterInfo.comics.available !== characterInfo.comics.returned">
+            The character {{ characterInfo.name }} has taken part in {{ characterInfo.comics.available }} comics, such as:
+          </span>
+        </p>
+        <ul>
+          <li *ngFor="let comic of characterInfo.comics.items">
+            {{ comic.name }}
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-template #noComics>The character {{ characterInfo.name }} has not taken part in any comics.</ng-template>
+    </section>
+
+    <section class="series">
+      <ng-container *ngIf="characterInfo.series.available > 0; else noSeries">
+        <p>
+          <span *ngIf="characterInfo.series.available === characterInfo.series.returned">
+            The character {{ characterInfo.name }} has taken part in {{ characterInfo.series.available }} series:
+          </span>
+          <span *ngIf="characterInfo.series.available !== characterInfo.series.returned">
+            The character {{ characterInfo.name }} has taken part in {{ characterInfo.series.available }} series, such as:
+          </span>
+        </p>
+        <ul>
+          <li *ngFor="let serie of characterInfo.series.items">
+            {{ serie.name }}
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-template #noSeries>The character {{ characterInfo.name }} has not taken part in any series.</ng-template>
+    </section>
+  </ng-container>
+
+  <ng-template #characterNotFound>
+    <p class="not-found">Character not found.</p>
+  </ng-template>
+</main>
+
+<section class="buttons">
+  <button (click)="returnToList()">Return to list</button>
+</section>
+
